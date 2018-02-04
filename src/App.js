@@ -26,6 +26,12 @@ export default class App extends Component {
             <input 
               placeholder ="Enter date here"
               onChange={event => this.setState({newDeadline: event.target.value})}
+              onKeyPress={event => {
+                if (event.key === 'Enter') {
+                  this.changeDeadline()
+                }
+              }
+              }
             />
             <button onClick={() => this.changeDeadline()}>Submit</button>
             <div className="instruction">
